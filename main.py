@@ -83,7 +83,7 @@ st.title("Multilingual STT & TTS with Hinglish Demo")
 if 'language_selected' not in st.session_state:
     st.session_state.language_selected = False
 
-if not st.session_state.language_selected:
+if not st.session_state.get('language_selected', False):
     lang = st.selectbox(
         "Select Language for STT and TTS",
         options=languages,
